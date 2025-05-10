@@ -1,0 +1,174 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #fae1dd;
+    font-family: DM Serif Text, sans-serif;
+    margin: 0;
+}
+
+.contenedor {
+    position: relative;
+}
+
+.superior {
+    position: absolute;
+    border-left: 180px solid transparent;
+    border-right: 180px solid transparent;
+    border-top: 120px solid #f08080;
+    border-bottom: 120px solid transparent;
+
+    transition: transform .75s;
+    transform-origin: top;
+}
+
+.mensaje {
+    position: absolute;
+    padding: 1.5rem;
+    line-height: 1.5rem;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 22px;
+    background: #eae2b7;
+    width: 360px;
+    height: 240px;
+    z-index: -1;
+    transition: transform 0.75s ease-in-out;
+}
+
+.mensaje:before {
+    content: "";
+    border-style: dotted;
+    position: absolute;
+    top: 12px;
+    left: 12px; 
+    right: 12px; 
+    bottom: 55px; 
+}
+
+.mensaje p{
+    position: relative;
+    top: -10px;
+    font-size: 1.2rem;
+}
+
+.carta {
+    border-left: 180px solid #f8ad9d;
+    border-right: 180px solid #f4978e;
+    border-top: 120px solid transparent;
+    border-bottom: 120px solid #f8ad9d;
+}
+
+.bx {
+    position: absolute;
+    color: #f6406a;
+    top: 90px;
+    right: 155px;
+    font-size: 50px;
+    animation: palpitar 0.6s linear infinite;
+}
+
+.psorpresa {
+    margin-top: -10px;
+}
+
+.botones {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.boton {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #ff66b2, #ff4081);
+    background-size: 200% 200%;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.boton:hover {
+    background-position: 100% 100%;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.abrir-superior {
+    transform: rotateX(180deg);
+}
+
+.abrir-mensaje {
+    transform: translateY(-100px);
+}
+
+.bx-rotada {
+    color: #f6406a;
+    animation: none; 
+}
+
+  
+.carta-con-imagen {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .imagen-mama {
+    width: 200px;
+    height: auto;
+    border-radius: 12px;
+    border: 5px solid #ffb6c1; /* Rosa suave */
+    padding: 4px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .imagen-mama:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  }
+  @media (max-width: 600px) {
+    .carta-con-imagen {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .imagen-mama {
+      width: 80%;
+      max-width: 250px;
+      margin-top: 20px;
+    }
+  
+    .mensaje {
+      width: 90%;
+      height: auto;
+      font-size: 18px;
+      padding: 1rem;
+    }
+  
+    .mensaje p {
+      font-size: 1rem;
+    }
+  
+    .botones {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .boton {
+      width: 70%;
+    }
+  }
+   
